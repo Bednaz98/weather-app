@@ -1,68 +1,85 @@
+# My Weather App
 
-# MY Weather App
+## Project Requirements
 
-## project requirements
-in order to run the project the following will be needed:
-- NodeJS
-- OpenJDK17 (or Java equivalent) Android only
-- Android Studio Android only
-- Xcode iOS only
-- Ruby 2.7 or greater iOS only
-more detailed instructions for OS specific setup can be found here: https://reactnative.dev/docs/0.74/set-up-your-environment?platform=android&os=macos
+To run this project, the following dependencies are required:
 
-The api requires a took to be used. This can be added by creating a .env.local file and adding the following:
+- **Node.js**
+- **OpenJDK 17** (or equivalent Java SDK) — *Android only*
+- **Android Studio** — *Android only*
+- **Xcode** — *iOS only*
+- **Ruby 2.7 or later** — *iOS only*
+
+For detailed setup instructions specific to your operating system, please refer to the [React Native environment setup guide](https://reactnative.dev/docs/0.74/set-up-your-environment?platform=android&os=macos).
+
+### API Configuration
+
+This app requires an API key. To provide this key, create a `.env.local` file in the project root and include the following:
 
 ```env
-EXPO_PUBLIC_API_KEY=****
+EXPO_PUBLIC_API_KEY=your_api_key_here
 ```
 
+## Running the Project
 
-## starting the project
+### Android
 
-### Running on Android
-to run on android, be sure to create an emulator through android studio. This will require installing a base image for the emulator.
+1. Open Android Studio.
+2. Create an emulator by installing a base system image.
+3. Run the emulator.
 
-### Running on iOS
-to run on ios, first open xCode and agree to the terms of service. be sure that the xcode commandline tools are install. open the simulator app that comes with xCode. install required OS simulator
+### iOS
 
-### deploying a test build
-After the above requirements are setup run the following commands in the terminal:
+1. Launch Xcode and accept the license agreement if prompted.
+2. Ensure that Xcode Command Line Tools are installed.
+3. Open the Simulator app.
+4. Install the required iOS runtime for the simulator.
+
+### Running the App
+
+In your terminal, execute the following commands:
+
 ```shell
-npm i # or npm install
+npm install # this will install all dependencies
 
-# for android
+# To run on Android
 npm run android
 
-# for ios
+# To run on iOS
 npm run ios
 ```
 
 ## App Features
 
-The React Native project was created to satisfy the following feature:
-- The User can input a city
-    - the user can also use their geo location
-    - when entering a location the user has a clear option
-    - submission is only allowed when the user types ore than 4 characters to prevent api calsl that may fail
-- Display the weather in a specific city
-    - City name
-    - Temperature
-    - Weather condition
-    - UV index
-    - "Feels like" Temperature
-- a user can favorite a location to persist it across app sessions
-- the user can clean a previously searched city
-- the user can toggle between fahrenheit and celsius 
-- The user has two ways to refresh the display
-    - standard pull down to refresh, using an cached data for up to one minute
-    - whew clicking on a favorite location, the app will fetch the relevant data live
-- All weather data is being pulled from a third party api
-- all data is cached in app
-- if the user has no wifi, parts of the display are disabled
-- if there is no wifi, the previous cities favorite can still be interacted with.
+This React Native application provides the following functionality:
+
+- **Search Functionality**
+  - Users can enter a city name or use their current geolocation.
+  - An option to clear the input is available.
+  - City search is enabled only after the user enters more than 4 characters to reduce failed API calls.
+
+- **Weather Display**
+  - Displays city name, temperature, weather condition, UV index, and "feels like" temperature.
+
+- **Favorites**
+  - Users can favorite a location, which is persisted across sessions.
+  - Previously searched cities can be cleared.
+
+- **Unit Toggle**
+  - Users can switch between Fahrenheit and Celsius.
+
+- **Data Refresh**
+  - Pull-to-refresh is supported, using cached data for up to one minute.
+  - Tapping a favorite location triggers a live API fetch.
+
+- **Offline Support**
+  - Weather data is cached locally.
+  - If the user is offline, some UI elements are disabled.
+  - Favorited cities remain accessible even without a Wi-Fi connection.
 
 
 
 # References
-Api reference source is from: https://www.weatherapi.com/
-Logo used here: <a href="https://www.flaticon.com/free-icons/weather-app" title="weather app icons">Weather app icons created by Andrean Prabowo - Flaticon</a>
+- source code: https://github.com/Bednaz98/weather-app
+- Api reference source is from: https://www.weatherapi.com/
+- Logo used here: <a href="https://www.flaticon.com/free-icons/weather-app" title="weather app icons">Weather app icons created by Andrean Prabowo - Flaticon</a>
